@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  php-8.2:
+    build: 
+      context: .
+      dockerfile: ./php-8.2.Dockerfile
+    tty: true
+    ports:
+      - '9000:9000'
+    volumes:
+      - ./:/var/www/app
+      - ./.env:/var/www/app/.env
